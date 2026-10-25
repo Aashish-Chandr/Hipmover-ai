@@ -320,10 +320,12 @@ export default function HomePage() {
           </div>
 
           <CoachCard
-            analysis={coachAnalysis}
+            coachData={coachAnalysis}
             isLoading={isAnalyzing}
             error={coachError}
-            onRetry={triggerCoachAnalysis}
+            bestRep={activeReps[0] || null}
+            worstRep={activeReps[activeReps.length - 1] || null}
+            onRefresh={triggerCoachAnalysis}
           />
         </div>
       </section>

@@ -96,7 +96,7 @@ export function SessionHistory({
           {sessions.map((sess) => (
             <div
               key={sess.id}
-              onClick={() => onLoadSession(sess.summary, sess.reps)}
+              onClick={() => onLoadSession?.(sess.summary, sess.reps)}
               className="border border-hairline bg-ink-1 p-3.5 hover:border-chrome-mid transition-all cursor-pointer group flex flex-col justify-between"
             >
               <div>
