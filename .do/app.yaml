@@ -1,0 +1,26 @@
+name: hipermove
+region: nyc
+services:
+- name: web
+  github:
+    branch: main
+    deploy_on_push: true
+  dockerfile_path: Dockerfile
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  envs:
+  - key: GEMINI_API_KEY
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: GEMMA_PRIMARY_MODEL
+    value: gemma-4-26b-a4b-it
+    scope: RUN_AND_BUILD_TIME
+  - key: GEMMA_FALLBACK_MODEL
+    value: gemma-4-31b-it
+    scope: RUN_AND_BUILD_TIME
+  - key: NODE_ENV
+    value: production
+    scope: RUN_AND_BUILD_TIME

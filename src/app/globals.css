@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink-0: #0B0C0E;
+  --color-ink-1: #121418;
+  --color-ink-2: #181B20;
+  --color-paper-0: #F4F5F7;
+  --color-paper-1: #C5CAD2;
+  --color-paper-2: #7E8590;
+  --color-hairline: rgba(244, 245, 247, 0.08);
+  --color-hairline-strong: rgba(244, 245, 247, 0.16);
+  --color-chrome-hi: #FFFFFF;
+  --color-chrome-mid: #AEB4BD;
+  --color-chrome-lo: #4A4F57;
+  
+  --do-blue: #0069FF;
+  --do-cyan: #00D2D3;
+}
+
+body {
+  background-color: #0B0C0E;
+  color: #C5CAD2;
+  font-family: var(--font-poppins), 'Poppins', -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Atmospheric 96px Repeating Grid and Radial Glow (Identical to jamiemckaye.com) */
+.jamie-atmosphere {
+  background: 
+    radial-gradient(70rem 26rem at 72% 82%, rgba(233, 235, 239, 0.05), transparent 62%),
+    radial-gradient(46rem 18rem at 24% 96%, rgba(174, 180, 189, 0.04), transparent 66%),
+    repeating-linear-gradient(90deg, rgba(244, 245, 247, 0.016) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(0deg, rgba(244, 245, 247, 0.014) 0 1px, transparent 1px 96px),
+    #0B0C0E;
+}
+
+/* Chrome Metallic Gradient Text */
+.chrome-text {
+  background: linear-gradient(135deg, #AEB4BD 0%, #FFFFFF 50%, #6E747D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Monospaced Precision Label */
+.label-mono {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7E8590;
+}
+
+/* Primary Button (Jamie McKaye crisp white block) */
+.btn-jamie-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #F4F5F7;
+  color: #0B0C0E;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 0px;
+  transition: all 0.2s ease;
+}
+
+.btn-jamie-primary:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-jamie-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #F4F5F7;
+  font-weight: 500;
+  font-size: 13.5px;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid rgba(244, 245, 247, 0.16);
+  border-radius: 0px;
+  transition: all 0.2s ease;
+}
+
+.btn-jamie-secondary:hover {
+  background-color: #121418;
+  border-color: #AEB4BD;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Interactive Card Top Hairline Hover Indicator */
+.door-hairline-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #4A4F57 0%, #FFFFFF 50%, #4A4F57 100%);
+  transition: transform 0.4s ease-out;
+}
+
+.group:hover .door-hairline-accent {
+  transform: scaleX(1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0C0E;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 245, 247, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 245, 247, 0.35);
+}
